@@ -6110,6 +6110,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "storage_cli"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap 3.2.25",
+ "hyper",
+ "internal_rpc",
+ "lazy_static",
+ "metric_exporter",
+ "platform",
+ "prometheus",
+ "rand 0.8.5",
+ "service_config",
+ "telemetry",
+ "tokio",
+ "tokio-util",
+]
+
+[[package]]
 name = "storage_utils"
 version = "0.1.0"
 dependencies = [
@@ -7904,6 +7923,7 @@ dependencies = [
  "derive_builder 0.12.0",
  "futures",
  "ipfs-api",
+ "ipfs-api-backend-hyper",
  "serde",
  "serde_derive",
  "serde_json",
