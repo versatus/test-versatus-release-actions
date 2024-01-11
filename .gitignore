@@ -19,6 +19,7 @@ tmp_key
 infra/gui/node_modules
 node_modules
 
+.cargo
 config.toml
 
 **/whitelist.json
