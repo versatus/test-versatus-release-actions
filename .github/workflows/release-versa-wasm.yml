@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-latest
-            target: x86_64-unknown-linux-musl
+          # - os: ubuntu-latest
+          #   target: x86_64-unknown-linux-musl
           # - os: ubuntu-latest
           #   target: x86_64-unknown-freebsd
           - os: ubuntu-latest
@@ -32,7 +32,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y musl-tools musl-dev gcc-aarch64-linux-gnu
-          echo "CC_aarch64-unknown-linux-musl=aarch64-linux-gnu-gcc" >> $GITHUB_ENV
+          echo "CC_aarch64-unknown-linux-musl=aarch64-linux-musl-gcc" >> $GITHUB_ENV
+          echo "PATH=/usr/bin/aarch64-linux-musl:$PATH" >> $GITHUB_ENV
 
       - name: Install Cross-Compilation Tools for x86_64-linux-musl
         if: matrix.target == 'x86_64-unknown-linux-musl'
